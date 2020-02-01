@@ -1,11 +1,18 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ `${msg}, ${name}!` }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
+    <h3>Doggies</h3>
+    <button v-on:click="visible = !visible" >{{ !visible ? message : 'Hide Doggies' }}</button>
+    <ul v-if="!visible">
+      <li v-for="dog in dogs" v-bind:key="dog">
+      {{ dog }}
+      </li>
+    </ul>
     <h3>Installed CLI Plugins</h3>
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
@@ -34,8 +41,16 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
-  }
+    msg: String,
+    name: String,
+  },
+  data: () => {
+    return {
+      dogs: ['Link', 'Midna', 'Leia'],
+      visible: false,
+      message: 'Show doggies'
+    }
+  },
 }
 </script>
 
