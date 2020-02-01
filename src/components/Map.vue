@@ -27,6 +27,8 @@ img {
 .choose-location {
   position: relative;
   top: -50px;
+  width: 100vw;
+  display: flex;
 }
 </style>
 
