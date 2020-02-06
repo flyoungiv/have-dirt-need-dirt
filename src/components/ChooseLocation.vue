@@ -8,7 +8,11 @@
       <md-card-content>
         <md-field>
           <label>Address</label>
-          <md-input v-bind:placeholder="defaultAddress"></md-input>
+          <md-input
+          :value="value"
+          @input="()=>console.log($event.target)"
+          placeholder="Enter your address here...">
+          </md-input>
           <md-icon>my_location</md-icon>
         </md-field>
       </md-card-content>
@@ -27,11 +31,9 @@
 
 <script>
 export default {
-  name: "ChooseLocation",
-  data: () => (
-    {
-      defaultAddress: '166 Lincolnway, Valparaiso, IN 46385'
-    }
-  )
+  // name: "ChooseLocation",
+  props: {
+    value: String
+  }
 };
 </script>

@@ -6,7 +6,9 @@
       </md-app-toolbar>
       <md-app-content>
         <Cards />
-        <Map />
+        <AddDirt />
+        <InventoryMap />
+        <!-- <Map /> -->
         <DirtInventory />
       </md-app-content>
     </md-app>
@@ -27,12 +29,13 @@
 </style>
 
 <script>
-import Cards from "./Cards.vue";
-import DirtInventory from "./DirtInventory.vue";
-import Map from "./Map.vue";
+import InventoryMap from './InventoryMap'
+import Cards from "./Cards.vue"
+import DirtInventory from "./DirtInventory.vue"
+import AddDirt from "./AddDirt"
 
 export default {
   name: "Home",
-  components: { Cards, DirtInventory, Map }
+  components: { InventoryMap, Cards, DirtInventory, AddDirt }
 };
 </script>

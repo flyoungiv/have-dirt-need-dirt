@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "core-js": "^3.4.4",
+    "firebase": "^7.8.0",
+    "google-maps-api-loader": "^1.1.1",
     "vue": "^2.6.10",
     "vue-material": "^1.0.0-beta-11"
   },
@@ -33,7 +35,9 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
+    "rules": {
+      "no-console": "off"
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }

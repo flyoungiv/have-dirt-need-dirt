@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="md-layout md-gutter md-alignment-center-center">
-      <div class="md-layout-item md-size-35 md-small-size-100">
+      <div class="md-layout-item md-size-40 md-small-size-100">
         <md-card md-with-hover>
           <md-ripple>
           <md-card-header>
@@ -22,7 +22,9 @@
           </md-ripple>
         </md-card>
       </div>
-      <div class="md-layout-item md-size-35 md-small-size-100">
+      
+      <div class="md-layout-item md-size-40 md-small-size-100">
+        <a href="#inventory-map">
         <md-card md-with-hover>
           <md-ripple>
           <md-card-header>
@@ -42,7 +44,9 @@
           </md-card-header>
           </md-ripple>
         </md-card>
+      </a>
       </div>
+      
     </div>
   </div>
 </template>
