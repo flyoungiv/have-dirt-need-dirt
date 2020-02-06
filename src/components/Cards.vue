@@ -2,25 +2,7 @@
   <div>
     <div class="md-layout md-gutter md-alignment-center-center">
       <div class="md-layout-item md-size-40 md-small-size-100">
-        <md-card md-with-hover>
-          <md-ripple>
-          <md-card-header>
-            <md-avatar class="md-avatar-icon">
-              <md-icon>timer</md-icon>
-            </md-avatar>
-
-            <div class="md-title">Today, 4:15PM CST</div>
-            <div class="md-subhead">Last dirt submission</div>
-          </md-card-header>
-          <md-card-media>
-            <img src="../assets/excavator.png" alt="Excavator" />
-          </md-card-media>
-          <md-card-header>
-            <div class="md-title">I have dirt</div>
-            <div class="md-subhead">Modify dirt inventory</div>
-          </md-card-header>
-          </md-ripple>
-        </md-card>
+        <AddDirt />
       </div>
       
       <div class="md-layout-item md-size-40 md-small-size-100">
@@ -52,16 +34,11 @@
 </template>
 
 <script>
+import AddDirt from './AddDirt'
+
 export default {
   name: "Cards",
-  methods: {
-    sendMessage() {
-      window.alert("Send a message...");
-    },
-    doACall() {
-      window.alert("Calling someone...");
-    }
-  }
+  components: { AddDirt }
 };
 </script>
 

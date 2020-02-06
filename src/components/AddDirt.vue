@@ -20,20 +20,22 @@
       </md-field>
       <md-dialog-actions>
         <md-button class="md-primary" @click="showDialog = false">Nevermind</md-button>
-        <md-button class="md-primary" @click="confirmDialog">Bye, Dirt!</md-button>
+        <md-button @click="confirmDialog">Bye, Dirt!</md-button>
       </md-dialog-actions>
     </md-dialog>
-    <md-button class="md-primary md-raised" @click="showDialog = true">Show Dialog</md-button>
+    <div @click="showDialog = true"><HaveDirtCard /></div>
   </div>
 </template>
 
 <script>
+import HaveDirtCard from './HaveDirtCard'
 import { db } from "../firebase/firebase.js";
 
 export default {
   name: "AddDirt",
+  components: { HaveDirtCard },
   data: () => ({
-    showDialog: true,
+    showDialog: false,
     address: "",
     contactName: "Randall Jacobson",
     contactPhone: "(432) 457-8431",

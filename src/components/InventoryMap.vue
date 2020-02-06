@@ -33,11 +33,11 @@
 </template>
 
 <script>
-import GoogleMapLoader from "./GoogleMapLoader";
-import GoogleMapMarker from "./GoogleMapMarker";
-import { db } from "../firebase/firebase.js";
+import GoogleMapLoader from "./GoogleMapLoader"
+import GoogleMapMarker from "./GoogleMapMarker"
+import { db } from "../firebase/firebase.js"
 
-import { mapSettings } from "@/constants/mapSettings";
+import { mapSettings } from "@/constants/mapSettings"
 
 export default {
   components: {
