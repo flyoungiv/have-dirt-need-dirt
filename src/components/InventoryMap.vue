@@ -26,6 +26,7 @@
             ></md-input>
             <md-icon>my_location</md-icon>
           </md-field>
+          <PlacesAutocomplete />
         </md-card-content>
       </md-card>
     </div>
@@ -35,6 +36,7 @@
 <script>
 import GoogleMapLoader from "./GoogleMapLoader"
 import GoogleMapMarker from "./GoogleMapMarker"
+import PlacesAutocomplete from "./PlacesAutocomplete"
 import { db } from "../firebase/firebase.js"
 
 import { mapSettings } from "@/constants/mapSettings"
@@ -42,7 +44,8 @@ import { mapSettings } from "@/constants/mapSettings"
 export default {
   components: {
     GoogleMapLoader,
-    GoogleMapMarker
+    GoogleMapMarker,
+    PlacesAutocomplete
   },
   data() {
     return {

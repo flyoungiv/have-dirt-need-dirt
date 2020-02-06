@@ -23,6 +23,5 @@ export default {
 }
 html {
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
 }
 </style>

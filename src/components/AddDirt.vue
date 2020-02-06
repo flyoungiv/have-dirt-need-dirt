@@ -6,6 +6,7 @@
         <label>Address</label>
         <md-input v-model="address"></md-input>
       </md-field>
+      <PlacesAutocomplete />
       <md-field>
         <label>Contact Name</label>
         <md-input v-model="contactName"></md-input>
@@ -29,11 +30,12 @@
 
 <script>
 import HaveDirtCard from './HaveDirtCard'
+import PlacesAutocomplete from './PlacesAutocomplete'
 import { db } from "../firebase/firebase.js";
 
 export default {
   name: "AddDirt",
-  components: { HaveDirtCard },
+  components: { HaveDirtCard, PlacesAutocomplete },
   data: () => ({
     showDialog: false,
     address: "",
@@ -65,9 +67,13 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .md-dialog {
   max-width: 768px;
   padding: 16px;
+}
+
+.md-menu-content {
+  z-index: 12;
 }
 </style>

@@ -13,19 +13,6 @@
   </div>
 </template>
 
-<style scoped>
-.truck-area {
-  height: 100%;
-  width: 50%;
-  display: flex;
-  align-items: center;
-}
-
-.truck-area > img {
-  height: 32px;
-}
-</style>
-
 <script>
 import InventoryMap from './InventoryMap'
 import Cards from "./Cards.vue"
