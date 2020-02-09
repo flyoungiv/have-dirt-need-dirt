@@ -90,8 +90,9 @@ export default {
 <style scoped>
 #inventory-map {
   position: relative;
-  margin-left: -16px;
-  margin-right: -16px;
+  margin-top: 32px;
+  margin-left: -32px;
+  margin-right: -32px;
 }
 
 .choose-location {

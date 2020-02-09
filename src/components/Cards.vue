@@ -1,40 +1,46 @@
 <template>
-  <div>
+  <div class="cards-area">
     <div class="md-layout md-gutter md-alignment-center-center">
-      <div class="md-layout-item md-size-40 md-small-size-100">
+      <div
+        class="md-layout-item md-size-30 md-medium-size-40 md-small-size-100"
+      >
         <AddDirt />
       </div>
-      
-      <div class="md-layout-item md-size-40 md-small-size-100">
-        <a href="#inventory-map">
-        <md-card md-with-hover>
-          <md-ripple>
-          <md-card-header>
-            <md-avatar class="md-avatar-icon">
-              <md-icon>timer</md-icon>
-            </md-avatar>
 
-            <div class="md-title">Yesterday, 9:27PM CST</div>
-            <div class="md-subhead">Last dirt request</div>
-          </md-card-header>
+      <div
+        class="md-layout-item md-size-30 md-medium-size-40 md-small-size-100"
+      >
+        <!-- <a href="#inventory-map"> -->
+        <md-card md-with-hover>
+          <!-- <md-ripple> -->
+          <div class="card-content-left">
+            <md-card-header>
+              <md-avatar class="md-avatar-icon">
+                <md-icon>timer</md-icon>
+              </md-avatar>
+
+              <div class="md-title">Today, 4:15PM CST</div>
+              <div class="md-subhead">Last dirt submission</div>
+            </md-card-header>
+
+            <md-card-header>
+              <div class="md-title">I have dirt</div>
+              <div class="md-subhead">Modify dirt inventory</div>
+            </md-card-header>
+          </div>
           <md-card-media>
-            <img src="../assets/dumptruck.png" alt="Dumptruck" />
+            <img src="../assets/dumptruck.png" alt="dumptruck" />
           </md-card-media>
-          <md-card-header>
-            <div class="md-title">I need dirt</div>
-            <div class="md-subhead">Find dirt close by</div>
-          </md-card-header>
-          </md-ripple>
+          <!-- </md-ripple> -->
         </md-card>
-      </a>
+        <!-- </a> -->
       </div>
-      
     </div>
   </div>
 </template>
 
 <script>
-import AddDirt from './AddDirt'
+import AddDirt from "./AddDirt";
 
 export default {
   name: "Cards",
@@ -43,51 +49,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.md-layout {
-  margin: 32px;
+.cards-area {
+  // padding-bottom: 32px;
 }
 
-.md-card {
-  width: 320px;
-  margin: 4px;
+.md-layout-item {
+  margin: 8px 0;
+}
+
+.md-card.md-theme-default {
+  margin: 0;
+  width: 100%;
   display: inline-block;
   vertical-align: top;
+  display: flex;
 }
 
-.md-card-example {
-  .md-subhead {
-    .md-icon {
-      $size: 16px;
+.card-content-left {
+  flex-grow: 1;
+}
 
-      width: $size;
-      min-width: $size;
-      height: $size;
-      font-size: $size !important;
-    }
-
-    span {
-      vertical-align: middle;
-    }
-  }
-
-  .card-reservation {
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    .md-icon {
-      margin: 8px;
-    }
-  }
-
-  .md-button-group {
-    display: flex;
-
-    .md-button {
-      min-width: 60px;
-      border-radius: 2px;
-    }
-  }
+.md-card-media {
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+  width: 140px;
+  display: flex;
+  align-items: center;
 }
 </style>
