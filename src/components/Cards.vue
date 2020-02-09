@@ -10,7 +10,7 @@
       <div
         class="md-layout-item md-size-30 md-medium-size-40 md-small-size-100"
       >
-        <!-- <a href="#inventory-map"> -->
+        <a href="#dirt-table">
         <md-card md-with-hover>
           <!-- <md-ripple> -->
           <div class="card-content-left">
@@ -33,7 +33,7 @@
           </md-card-media>
           <!-- </md-ripple> -->
         </md-card>
-        <!-- </a> -->
+        </a>
       </div>
     </div>
   </div>
