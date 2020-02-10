@@ -55,7 +55,8 @@ export default {
             coordinates: json.results[0].geometry.location,
             contactName: this.contactName,
             contactPhone: this.contactPhone,
-            quantity: this.quantity
+            quantity: this.quantity,
+            created: (new Date()).toISOString()
           });
         });
     },
@@ -68,7 +69,8 @@ export default {
 </script>
 
 <style lang="scss">
-.md-dialog {
+.md-dialog.md-theme-default {
+  min-width: 360px;
   max-width: 768px;
   padding: 16px;
 }
