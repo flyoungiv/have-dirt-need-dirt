@@ -6,7 +6,6 @@
         <label>Address</label>
         <md-input v-model="address"></md-input>
       </md-field>
-      <PlacesAutocomplete />
       <md-field>
         <label>Contact Name</label>
         <md-input v-model="contactName"></md-input>
@@ -16,7 +15,7 @@
         <md-input v-model="contactPhone"></md-input>
       </md-field>
       <md-field>
-        <label>Quantity</label>
+        <label>Approximate Quantity (Yards)</label>
         <md-input v-model="quantity"></md-input>
       </md-field>
       <md-dialog-actions>
@@ -30,12 +29,11 @@
 
 <script>
 import HaveDirtCard from './HaveDirtCard'
-import PlacesAutocomplete from './PlacesAutocomplete'
 import { db } from "../firebase/firebase.js";
 
 export default {
   name: "AddDirt",
-  components: { HaveDirtCard, PlacesAutocomplete },
+  components: { HaveDirtCard },
   data: () => ({
     showDialog: false,
     address: "",

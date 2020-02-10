@@ -26,7 +26,6 @@
             ></md-input>
             <md-icon>my_location</md-icon>
           </md-field>
-          <PlacesAutocomplete />
         </md-card-content>
       </md-card>
     </div>
@@ -36,7 +35,6 @@
 <script>
 import GoogleMapLoader from "./GoogleMapLoader"
 import GoogleMapMarker from "./GoogleMapMarker"
-import PlacesAutocomplete from "./PlacesAutocomplete"
 import { db } from "../firebase/firebase.js"
 
 import { mapSettings } from "@/constants/mapSettings"
@@ -44,14 +42,13 @@ import { mapSettings } from "@/constants/mapSettings"
 export default {
   components: {
     GoogleMapLoader,
-    GoogleMapMarker,
-    PlacesAutocomplete
+    GoogleMapMarker
   },
   data() {
     return {
       markers: [],
       address: "146 Brockton Pl, Valparaiso, IN 46385",
-      center: { lat: 43.46781, lng: -85.04655 }
+      center: { lat: 41.4676236, lng: -87.0586034 }
     };
   },
   computed: {

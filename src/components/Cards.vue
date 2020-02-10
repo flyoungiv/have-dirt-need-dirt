@@ -15,13 +15,13 @@
                   <md-icon>timer</md-icon>
                 </md-avatar>
 
-                <div class="md-title">Today, 4:15PM CST</div>
-                <div class="md-subhead">Last dirt submission</div>
+                <div class="md-title">Yesterday, 1:49PM CST</div>
+                <div class="md-subhead">Last dirt request</div>
               </md-card-header>
 
               <md-card-header>
-                <div class="md-title">I have dirt</div>
-                <div class="md-subhead">Modify dirt inventory</div>
+                <div class="md-title">I need dirt</div>
+                <div class="md-subhead">Find available dirt</div>
               </md-card-header>
             </div>
             <md-card-media>

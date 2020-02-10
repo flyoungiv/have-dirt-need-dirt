@@ -7,19 +7,20 @@
             <!-- <md-table-head md-numeric>ID</md-table-head> -->
             <md-table-head>Address</md-table-head>
             <md-table-head>Contact Person</md-table-head>
-            <md-table-head>Phone</md-table-head>
-            <md-table-head>Quantity</md-table-head>
+          <md-table-head>Phone</md-table-head>
+            <md-table-head>YD</md-table-head>
             <md-table-head>Date</md-table-head>
+            <md-table-head></md-table-head>
           </md-table-row>
 
           <md-table-row v-for="dirt in dirtList" v-bind:key="dirt.id">
             <!-- <md-table-cell md-numeric>{{ dirt.id }}</md-table-cell> -->
             <md-table-cell>{{ dirt.address }}</md-table-cell>
             <md-table-cell>{{ dirt.contactName }}</md-table-cell>
-            <md-table-cell>{{ dirt.contactPhone.replace('-', '').replace(' ','') }}</md-table-cell>
+            <md-table-cell class="no-wrap">{{ dirt.contactPhone }}</md-table-cell>
             <md-table-cell>{{ dirt.quantity }}</md-table-cell>
             <md-table-cell>{{ dirt.created }}</md-table-cell>
-            
+            <md-table-cell><MoreMenu :id="dirt.id"/></md-table-cell>
           </md-table-row>
         </md-table>
       </div>
@@ -28,27 +29,35 @@
 </template>
 
 <script>
-import { db } from "../firebase/firebase.js";
+import MoreMenu from './MoreMenu'
+import { db } from "../firebase/firebase.js"
 // import dirtData from "../data/dirt_data.json"
 
 export default {
   name: "DirtInventory",
+  components: { MoreMenu },
   data: () => ({
     dirtList: []
   }),
   mounted() {
     db.ref("/dirt").on("value", snapshot => {
-      this.dirtList.length = 0
+      this.dirtList.length = 0;
       snapshot.forEach(childSnapshot => {
         //is this creating duplicate markers on add?
-        const { contactName, contactPhone, address, quantity, created } = childSnapshot.val()
+        const {
+          contactName,
+          contactPhone,
+          address,
+          quantity,
+          created
+        } = childSnapshot.val();
         this.dirtList.push({
           id: childSnapshot.key,
           contactName: contactName,
           contactPhone: contactPhone,
           address: address,
           quantity: quantity,
-          created: created ? (new Date(created)).toDateString() : ''
+          created: created ? new Date(created).toDateString() : ""
         });
       });
     });
@@ -68,6 +77,7 @@ export default {
 }
 
 .md-layout-item .md-table.md-theme-default .md-table-content {
+  background-color: var(--md-theme-default-background,#424242);
   border-radius: 2px;
   padding: 0;
 }
@@ -79,5 +89,9 @@ export default {
   50% {
     transform: translateY(-2em);
   }
+}
+
+.no-wrap {
+  white-space: nowrap;
 }
 </style>
